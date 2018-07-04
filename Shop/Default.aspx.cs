@@ -1,19 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Services.Products;
 
 public partial class _Default : Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
+    private IProductService productService;
 
+    protected override void OnInit(EventArgs e)
+    {
+        this.productService = new ProductService();
+    }
+    protected override void OnLoadComplete(EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            ListProducts();
+        }
     }
 
-    protected void Button1_Click(object sender, EventArgs e)
+    private void ListProducts()
     {
-        Response.Write("It Works!");
+        var products = this.productService.GetProducts();
+        ProductsList.DataSource = products;
+        ProductsList.DataBind();
+    }
+
+
+    protected void ProductImage_OnClick(object sender, ImageClickEventArgs e)
+    {
+        //Response.Redirect("Details.aspx?id=5");
+        ImageButton btn = (ImageButton)sender;
+        string id = btn.CommandArgument;
+        Response.Redirect("Details.aspx?id=" + id);
     }
 }
