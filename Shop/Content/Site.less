@@ -8,21 +8,32 @@
 @heavy-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 @card-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
+
+@Dancing: 'Dancing Script', cursive;
+@Kaushaun: 'Kaushan Script', cursive;
+@Satisfy: 'Satisfy', cursive;
+@Vibes: 'Great Vibes', cursive;
+@Cookie:  'Cookie', cursive;
+@Sac: 'Sacramento', cursive;
+
 /*Components*/
-@logo-font: 'Pacifico', cursive;
+@logo-font: @Vibes;
 @logo-color: @pink;
 @font-color: @black;
 @back-color: @white;
-
 /* Move down content because we have a fixed navbar that is 50px tall */
+
+
+
+
 body {
-    background-color: @back-color;
-    font-size: .85em;
-    margin: 0;
-    padding: 0;
-    color: @font-color;
-    padding-top: 20px;
-    padding-bottom: 20px;    
+  background-color: @back-color;
+  font-size: .85em;
+  margin: 0;
+  padding: 0;
+  color: @font-color;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 input,
@@ -31,27 +42,39 @@ textarea {
     max-width: 280px;
 }
 
-.logo,
-.logo:hover{
-    font-family: @logo-font;
-    color: @logo-color;
-    font-size: 40px;
-    padding-right: 20px;
-    text-transform: capitalize;
-    font-weight: normal;
-    text-decoration: none;
-}
 
 .navbar {
     -moz-box-shadow: @heavy-shadow;
     -webkit-box-shadow: @heavy-shadow;
     box-shadow: @heavy-shadow;
+    margin:0;
+    padding:0;
+    padding-top:5px;
+}
+
+.logo,
+.logo:hover {
+  font-family: @logo-font;
+  color: @logo-color;
+  font-size: 50px;
+  padding-right: 20px;
+  text-transform: capitalize;
+  font-weight: normal;
+  text-decoration: none;
 }
 
 .card {
-    -moz-box-shadow: @heavy-shadow;
-    -webkit-box-shadow: @heavy-shadow;
-    box-shadow: @heavy-shadow;
+  -moz-box-shadow: @card-shadow;
+  -webkit-box-shadow: @card-shadow;
+  box-shadow: @card-shadow;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  -moz-box-shadow: @heavy-shadow;
+  -webkit-box-shadow: @heavy-shadow;
+  box-shadow: @heavy-shadow;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .border-pink{
@@ -65,6 +88,3 @@ textarea {
     text-align:start;
 }
 
-img:focus{
-    
-}

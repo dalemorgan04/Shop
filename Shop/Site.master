@@ -14,6 +14,7 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cookie|Dancing+Script|Great+Vibes|Kaushan+Script|Sacramento|Satisfy" rel="stylesheet"> 
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/Site.less" rel="stylesheet/less" type="text/css" />
     <script src="Scripts/less-1.5.1.js"></script>
@@ -45,16 +46,13 @@
         </nav>
 
         <div class="container body-content">
-            
-            
-
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
+
             <hr />
             <footer>
                 Developed By Dale Morgan
             </footer>
-
         </div>
     </form>
 </body>
