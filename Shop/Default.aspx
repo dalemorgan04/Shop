@@ -1,18 +1,10 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
-<script runat="server">
-
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-
-    }
-</script>
-
-
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
         <h1>Products</h1>
+        <div class="dropdown-divider"></div>
     </div>
 
     <div class="product-list">
@@ -27,12 +19,10 @@
                         <p class="price"><%# Eval("RetailPrice") %></p>
                     </div>
                 </div>
-
+                
             </ItemTemplate>
         </asp:DataList>
     </div>
-    
-    
     
 </asp:Content>
 

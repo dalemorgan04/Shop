@@ -6,12 +6,20 @@ using Services.Products;
 public partial class Details : Page
 {
     private IProductService productService;
+
+    protected override void OnInit(EventArgs e)
+    {
+        this.productService = new ProductService();
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         string query = Request.QueryString["id"];
         if (query != null)
         {
-            Response.Write("Worked");
+            if (!Page.IsPostBack)
+            {
+                ListProduct(Convert.ToInt32(query));
+            }
         }
         else
         {
@@ -19,8 +27,12 @@ public partial class Details : Page
         }
     }
 
-    protected void Button1_Click(object sender, EventArgs e)
+    private void ListProduct(int id)
     {
-        Response.Write("Works!");
+        var product = this.productService.GetProducts(id);
+        Name.Text = product.Name;
+        Description.Text = product.Description;
+        ProductImage.ImageUrl = product.ImageUrl;
+        this.DataBind();
     }
 }

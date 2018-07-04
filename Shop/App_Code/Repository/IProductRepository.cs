@@ -9,5 +9,6 @@ namespace Repository
     public interface IProductRepository
     {
         List<Product> Get();
+        Product Get(int id);
     }
 }

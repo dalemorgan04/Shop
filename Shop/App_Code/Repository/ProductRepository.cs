@@ -43,5 +43,38 @@ namespace Repository
                 }
             }
         }
+
+        public Product Get(int id)
+        {//Create a using statement to handle your Connection
+            using (SqlConnection sqlConnection = new SqlConnection(System.Web.Configuration.WebConfigurationManager.ConnectionStrings["DefaultConnection"].ToString()))
+            {
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("GetProductId", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add(new SqlParameter("@id", id));
+                try
+                {
+                    SqlDataReader data = sqlCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                    Product product = new Product();
+                    while (data.Read())
+                    {
+                        product = new Product()
+                        {
+                            Id = Convert.ToInt32(data["id"]),
+                            Name = data["product_name"].ToString(),
+                            Description = data["product_description"].ToString(),
+                            ImageUrl = data["image_name"].ToString(),
+                            RetailPrice = Convert.ToInt32(data["price_rrp"]),
+                            SellingPrice = Convert.ToInt32(data["selling_price"])
+                        };
+                    }
+                    return product;
+                }
+                catch (Exception exp)
+                {
+                    throw (exp);
+                }
+            }
+        }
     }
 }

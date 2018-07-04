@@ -2,8 +2,10 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
-    <h3>Your application description page.</h3>
-    <p>Use this area to provide additional information.</p>
     
-    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+    <div class="product-details-container">
+        <asp:Image ID="ProductImage"  runat="server"/>
+        <asp:Label ID="Name"  runat="server" Text="Label"></asp:Label>
+        <asp:TextBox ID="Description" runat="server"></asp:TextBox>
+    </div>
 </asp:Content>

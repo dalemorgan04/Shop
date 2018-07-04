@@ -36,5 +36,20 @@ namespace Services.Products
             }
             return productDtos;
         }
+
+        public ProductDto GetProducts(int id)
+        {
+            Product product = repository.Get(id);
+            ProductDto productDto = new ProductDto()
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                ImageUrl = product.ImageUrl,
+                RetailPrice = product.RetailPrice,
+                SellingPrice = product.SellingPrice
+            };
+            return productDto;
+        }
     }
 }
