@@ -9,7 +9,7 @@
 @card-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
 /*Components*/
-@logo-font: 'Berkshire Swash', cursive;
+@logo-font: 'Pacifico', cursive;
 @logo-color: @pink;
 @font-color: @black;
 @back-color: @white;
@@ -31,15 +31,40 @@ textarea {
     max-width: 280px;
 }
 
-.logo {
+.logo,
+.logo:hover{
     font-family: @logo-font;
     color: @logo-color;
     font-size: 40px;
     padding-right: 20px;
+    text-transform: capitalize;
+    font-weight: normal;
+    text-decoration: none;
 }
 
 .navbar {
     -moz-box-shadow: @heavy-shadow;
     -webkit-box-shadow: @heavy-shadow;
     box-shadow: @heavy-shadow;
+}
+
+.card {
+    -moz-box-shadow: @heavy-shadow;
+    -webkit-box-shadow: @heavy-shadow;
+    box-shadow: @heavy-shadow;
+}
+
+.border-pink{
+    border-color: @pink;
+}
+
+.price{
+    color: @pink;
+    font-weight: bold;
+    font-size:large;
+    text-align:start;
+}
+
+img:focus{
+    
 }

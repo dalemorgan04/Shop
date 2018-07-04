@@ -1,11 +1,17 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Details.aspx.cs" Inherits="Details" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
+        
+    <h1 class="mt-5">Details</h1>
+    <div class="dropdown-divider border-pink"></div>
     
-    <div class="product-details-container">
+    <div class="d-flex align-content-stretch justify-content-between">
         <asp:Image ID="ProductImage"  runat="server"/>
-        <asp:Label ID="Name"  runat="server" Text="Label"></asp:Label>
-        <asp:TextBox ID="Description" runat="server"></asp:TextBox>
+        <div class="d-flex flex-column">
+            <asp:Label ID="Name"  runat="server" Text="Label"></asp:Label>
+            <asp:TextBox ID="Description" runat="server"></asp:TextBox>
+        </div>
     </div>
+    
+    <a runat="server" href="~/Default">Back</a>
 </asp:Content>

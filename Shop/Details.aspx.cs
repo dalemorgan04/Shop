@@ -21,10 +21,6 @@ public partial class Details : Page
                 ListProduct(Convert.ToInt32(query));
             }
         }
-        else
-        {
-            Response.Write("Didn't work");
-        }
     }
 
     private void ListProduct(int id)
