@@ -17,8 +17,13 @@
 * Resposive grid layout of images
 * Animations of panels on hover
 * Click on image to direct to the details of that particular product
+* Doesn't show description as is too much information
 ### Details page
-* Navigated to via main page
+* Navigated to via main page. Shows a single product based on the queryString used.
+* Shows description
+* Back button
 ## What I would have done given more time
-* Prevent the details page from being navigated to without a product query included
+* The image is stretched in the details page when the window is resized
+* Missing prices in details page
+* Prevent the details page from being navigated to without a queryString included
 * Limit the number of products per page and build in pagination
