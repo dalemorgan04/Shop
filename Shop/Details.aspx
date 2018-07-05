@@ -5,11 +5,11 @@
     <h1 class="mt-5">Details</h1>
     <div class="dropdown-divider border-pink"></div>
     
-    <div class="d-flex align-content-stretch justify-content-between">
+    <div class=" d-flex align-content-stretch justify-content-between">
         <asp:Image ID="ProductImage"  runat="server"/>
-        <div class="d-flex flex-column">
-            <asp:Label ID="Name"  runat="server" Text="Label"></asp:Label>
-            <asp:TextBox ID="Description" runat="server"></asp:TextBox>
+        <div class="card p-5 d-flex flex-column">
+            <asp:Label ID="Name"  runat="server" CssClass="h3"></asp:Label>
+            <asp:Panel ID="Description" runat="server"></asp:Panel>
         </div>
     </div>
     

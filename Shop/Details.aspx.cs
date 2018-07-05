@@ -27,7 +27,13 @@ public partial class Details : Page
     {
         var product = this.productService.GetProducts(id);
         Name.Text = product.Name;
-        Description.Text = product.Description;
+        Description.Controls.Add( new Literal()
+        {
+            ID = "Description-Text",
+            Text = product.Description
+        });
+
+        //Description.Text = product.Description;
         ProductImage.ImageUrl = product.ImageUrl;
         this.DataBind();
     }
